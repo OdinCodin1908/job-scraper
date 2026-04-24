@@ -1,9 +1,16 @@
 import csv
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+APP_ID = os.getenv("APP_ID")
+APP_KEY = os.getenv("APP_KEY")
+BASE_URL = "https://api.adzuna.com/v1/api/jobs/gb/search/1"
 APP_ID = "d065aea6"
 APP_KEY = "1ea74a67372c9b4c5875ca11c36509f7"
-BASE_URL = "https://api.adzuna.com/v1/api/jobs/gb/search/1"
+
 
 def search_jobs(keyword, location=""):
     response = requests.get(
